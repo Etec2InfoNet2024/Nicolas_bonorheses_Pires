@@ -33,13 +33,30 @@ console.log(data[id])
 
 // selecionar nó do html relacionado a mensagem  
 // https://developer.mozilla.org/pt-BR/docs/Web/API/Document/querySelector
-let content = document.querySelector('#content') 
-content.textContent = "coisacoisa"
-console.log(content.textContent)
+
+ let content = document.querySelector('#content') 
+// content.textContent = "randum"
+// console.log(content.textContent)
+
 // selecionar nó do html relacionado ao botão de novas frases
 // https://developer.mozilla.org/pt-BR/docs/Web/API/Document/getElementById
 // selecionar nó do html relacionado ao botão de compartilhar twitter
 
+let newQuotesButton = document.getElementById("newQuote")
+console.log(newQuotesButton)
+
+
+
+let shareIt = document.getElementById("shareTwitter")
+console.log(shareIt)
+
+
+ 
+newQuotesButton.addEventListener ("click", () => {
+   id = Math.floor((Math.random() * data.length))
+   console.log(data[id])
+   content.textContent = data[id]["quote"]
+})
 
 
 /* adicionar evento de click para quando usuário clicar no botão newQuote
